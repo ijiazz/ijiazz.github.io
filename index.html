@@ -1,11 +1,118 @@
-<!doctype html>
-<html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>测试</title>
-  </head>
-  <body>
-    测试
-  </body>
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>IJIA学院 · 记录站</title>
+		<meta
+			name="description"
+			content="IJIA学院记录站，收录网站更新记录、邹佳佳（佳佳子）相关动态与精美海报相册，蓝色主题、唯美风格，适配移动端。"
+		/>
+		<meta name="keywords" content="IJIA学院, 记录站, 邹佳佳, 佳佳子, 更新记录" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="canonical" href="https://record.ijiazz.cn/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="IJIA学院 · 记录站" />
+		<meta property="og:title" content="IJIA学院 · 记录站" />
+		<meta property="og:description" content="IJIA学院更新记录" />
+		<meta property="og:url" content="https://record.ijiazz.cn/" />
+		<meta property="og:image" content="https://record.ijiazz.cn/ijia-logo-256.png" />
+		<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebSite",
+				"name": "IJIA学院 · 记录站",
+				"url": "https://record.ijiazz.cn/",
+				"potentialAction": {
+					"@type": "SearchAction",
+					"target": "https://record.ijiazz.cn/?q={search_term_string}",
+					"query-input": "required name=search_term_string"
+				}
+			}
+		</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "邹佳佳",
+				"alternateName": "佳佳子",
+				"url": "https://ijiazz.cn/"
+			}
+		</script>
+
+		<link rel="stylesheet" href="/styles/site.css" />
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container nav">
+				<a class="brand" href="/">
+					<img class="brand-logo" src="/ijia-logo-256.png" alt="IJIA标识" />
+					<span>IJIA学院 · 记录站</span>
+				</a>
+			</div>
+		</header>
+
+		<section class="hero" aria-label="封面">
+			<div class="hero-media">
+				<img src="/image/5.webp" alt="唯美蓝色主题封面" />
+				<div class="hero-overlay"></div>
+			</div>
+			<div class="container hero-content appear">
+				<h1>遇见</h1>
+				<p>“一束玫瑰，一顿晚餐，一次海边的约会...无数件小事累计起来，就是平凡生活里的奇迹”</p>
+				<div class="hero-actions">
+					<a class="btn btn-primary" href="#updates">查看更新</a>
+				</div>
+			</div>
+			<div class="decor-bubbles" aria-hidden="true"></div>
+		</section>
+
+		<main>
+			<section id="updates" class="section container">
+				<div class="section-head">
+					<h2 class="section-title">更新日志</h2>
+					<a class="section-more" href="/updates" aria-label="更多更新">更多 →</a>
+				</div>
+				<div id="updates-list" class="grid updates-grid">
+					<!-- JS 注入更新卡片，若失败则显示静态回退 -->
+					<article class="card appear">
+						<a class="card-link" href="/updates/2507/">
+							<div class="card-cover gradient blue"></div>
+							<div class="card-body">
+								<h3>2025年6、7月更新</h3>
+								<p>移动端适配 · 表白墙 · 主题切换</p>
+								<time datetime="2025-07">2025-07</time>
+							</div>
+						</a>
+					</article>
+					<article class="card appear">
+						<a class="card-link" href="/updates/2505/">
+							<div class="card-cover gradient indigo"></div>
+							<div class="card-body">
+								<h3>2025年5月更新</h3>
+								<p>安全设置 · 首页优化 · 入学指南</p>
+								<time datetime="2025-05">2025-05</time>
+							</div>
+						</a>
+					</article>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container footer-inner">
+				<div><span id="y"></span> IJIA学院 · 记录站</div>
+				<div class="footer-links">
+					<a href="https://ijiazz.cn" target="_blank" rel="noopener">主站</a>
+				</div>
+			</div>
+		</footer>
+
+		<div id="lightbox" class="lightbox" aria-hidden="true">
+			<button class="lightbox-close" aria-label="关闭">×</button>
+			<img class="lightbox-img" alt="预览" />
+		</div>
+	</body>
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>更新日志 | IJIA学院 · 更新日志</title>
+		<meta name="description" content="邹佳佳（佳佳子）相关动态汇总，持续更新。" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="/styles/site.css" />
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container nav">
+				<a class="brand" href="/"
+					><img class="brand-logo" src="/ijia-logo-256.png" alt="IJIA标识" /><span>IJIA学院 · 更新日志</span></a
+				>
+			</div>
+		</header>
+
+		<main class="container section">
+			<h1 class="section-title">更新日志</h1>
+			<ul id="news-list" class="news-list">
+				<li class="news-item appear empty">载入中…</li>
+			</ul>
+		</main>
+
+		<script type="module">
+			/* ES2020 modules */
+			const $ = (s, r = document) => r.querySelector(s);
+			const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+
+			// Load latest news (if exists)
+			(async function loadNews() {
+				const list = $("#news-list");
+				if (!list) return;
+				try {
+					const res = await fetch("./index.json", { cache: "no-cache" });
+					if (!res.ok) return;
+					const { items } = await res.json();
+					list.innerHTML =
+						(items && items.length ? items : [])
+							.slice(0, 4)
+							.map((it) => {
+								const date = it.date ? `<time datetime="${it.date}">${it.date}</time>` : "";
+								const linkOpen = it.link ? `<a href="${it.link}" target="_blank" rel="noopener">` : "";
+								const linkClose = it.link ? "</a>" : "";
+								return `<li class="news-item appear">${date} ${linkOpen}${it.title}${linkClose}</li>`;
+							})
+							.join("") || '<li class="news-item appear empty">暂无最新动态，敬请期待～</li>';
+					$$(".appear", list).forEach((el) => io.observe(el));
+				} catch {
+					// keep placeholder
+				}
+			})();
+		</script>
+	</body>
+</html>
