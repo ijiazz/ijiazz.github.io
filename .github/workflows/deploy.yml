@@ -26,6 +26,8 @@ jobs:
           deno-version: 2
           cache: true
       - name: Install
+        run: deno install
+      - name: Build
         run: deno task build
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
