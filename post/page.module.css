@@ -1,0 +1,26 @@
+.container {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 150px);
+	gap: 2px;
+}
+.coverItem {
+	aspect-ratio: 3/4;
+
+	overflow: hidden;
+	color: #fff;
+	font-size: 12px;
+
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	text-align: center;
+
+	.publishTime {
+		width: 100%;
+		background: linear-gradient(to bottom, #0000, #0008);
+		padding: 2px 0;
+		font-size: 14px;
+		font-weight: 600;
+	}
+}

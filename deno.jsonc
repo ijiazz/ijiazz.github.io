@@ -1,0 +1,23 @@
+{
+	"nodeModulesDir": "manual",
+	"tasks": {
+		"build": "deno x vite build",
+		"dev": "deno x vite"
+	},
+	"compilerOptions": {
+		"lib": ["dom", "es2022", "deno.ns"],
+		"verbatimModuleSyntax": true,
+		"jsx": "react-jsx",
+		"jsxImportSource": "react"
+	},
+	"imports": {
+		"react": "npm:react@^19.2.3",
+		"react-dom": "npm:react-dom@^19.2.3",
+
+		"vite": "npm:vite@^7.3.0",
+		"@types/react": "npm:@types/react@^19.2.7",
+		"@types/react-dom": "npm:@types/react-dom@^19.2.3",
+		"@vitejs/plugin-react": "npm:@vitejs/plugin-react@^5.1.2",
+		"@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.5"
+	}
+}
